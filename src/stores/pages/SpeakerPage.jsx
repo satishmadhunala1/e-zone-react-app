@@ -8,7 +8,6 @@ const SpeakerPage = () => {
     <>
       <Navbar />
       <div className="fullpage">
-        {/* Displaying all products without filtering */}
         <div className="pageSection">
           {speakerData.map((speak) => {
             return (
@@ -29,5 +28,4 @@ const SpeakerPage = () => {
     </>
   );
 };
-
 export default SpeakerPage;
