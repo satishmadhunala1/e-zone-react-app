@@ -3,7 +3,6 @@ import { tvData } from "../data/tv";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { useCart } from "../context/CartContext";
-import "./single.css";
 
 
 const TvSingle = () => {
