@@ -19,7 +19,7 @@ const WomanPage = () => {
                   </div>
                 </Link>
                 <div className="proModel">
-                  {item.brand}, {item.model}
+                  {item.brand} {item.model}
                 </div>
               </div>
             );
