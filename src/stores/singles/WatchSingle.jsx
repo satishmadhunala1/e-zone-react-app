@@ -3,6 +3,8 @@ import { watchData } from "../data/watch";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { useCart } from "../context/CartContext";
+import "./single.css";
+
 
 const WatchSingle = () => {
   const { id } = useParams();

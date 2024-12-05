@@ -3,6 +3,8 @@ import { womanData } from "../data/woman";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { useCart } from "../context/CartContext";
+import "./single.css";
+
 
 const WomanSingle = () => {
   const { id } = useParams();

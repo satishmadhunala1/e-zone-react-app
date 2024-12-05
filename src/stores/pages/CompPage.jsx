@@ -3,6 +3,9 @@ import { computerData } from '../data/computers';  // No changes here
 import Navbar from '../components/Navbar';  // No changes here
 import { Link } from 'react-router-dom';  // No changes here
 
+import './Pages.css';
+
+
 const CompPage = () => {
   return (
     <>

@@ -3,6 +3,8 @@ import { furnitureData } from "../data/furniture";
 import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { useCart } from "../context/CartContext";
+import "./single.css";
+
 
 const FurnitureSingle = () => {
   const { id } = useParams();

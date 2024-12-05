@@ -2,6 +2,7 @@ import React from 'react';
 import { tvData } from '../data/tv';
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
+import './Pages.css';
 
 const TvPage = () => {
   return (
