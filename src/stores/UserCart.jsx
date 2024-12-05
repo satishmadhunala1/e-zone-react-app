@@ -2,9 +2,8 @@
 import React from 'react'
 import { useCart } from './context/CartContext'
 import Navbar from './components/Navbar';
-import "./UserCart.css"; // Import external CSS
 
-
+import './cart.css'
 
 const UserCart = () => {
 
