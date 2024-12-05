@@ -2,8 +2,7 @@ import { acData } from '../data/ac';  // No changes here
 import Navbar from '../components/Navbar';  // No changes here
 import { Link } from 'react-router-dom';  // No changes here
 
-
-
+ import './pag.css'
 const AcPage = () => {
   return (
     <>

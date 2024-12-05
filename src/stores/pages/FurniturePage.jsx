@@ -3,6 +3,9 @@ import { furnitureData } from '../data/furniture';  // No changes here
 import Navbar from '../components/Navbar';  // No changes here
 import { Link } from 'react-router-dom';  // No changes here
 
+import './pag.css'
+
+
 const FurniturePage = () => {
   return (
     <>

@@ -4,6 +4,9 @@ import { useParams } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { useCart } from "../context/CartContext";
 
+import './sing.css'
+
+
 const MenSingle = () => {
   const { id } = useParams();
   const { addToCart } = useCart();

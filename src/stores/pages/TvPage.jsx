@@ -3,6 +3,9 @@ import { tvData } from '../data/tv';
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 
+import './pag.css'
+
+
 const TvPage = () => {
   return (
     <>

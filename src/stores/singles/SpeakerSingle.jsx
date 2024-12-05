@@ -5,6 +5,9 @@ import Navbar from "../components/Navbar";
 import { useCart } from "../context/CartContext";
 
 
+import './sing.css'
+
+
 const SpeakerSingle = () => {
   const { id } = useParams();
   const { addToCart } = useCart();
