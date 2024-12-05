@@ -2,7 +2,6 @@ import React from "react";
 import { speakerData } from "../data/speaker";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
-import './Pages.css';
 
 const SpeakerPage = () => {
   return (

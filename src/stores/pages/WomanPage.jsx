@@ -2,7 +2,6 @@ import React from 'react';
 import { womanData } from '../data/woman';  // No changes here
 import Navbar from '../components/Navbar';  // No changes here
 import { Link } from 'react-router-dom';  // No changes here
-import './Pages.css';
 
 const WomanPage = () => {
   return (

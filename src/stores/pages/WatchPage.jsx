@@ -2,7 +2,6 @@ import React from 'react';
 import { watchData } from '../data/watch';  // No changes here
 import Navbar from '../components/Navbar';  // No changes here
 import { Link } from 'react-router-dom';  // No changes here
-import './Pages.css';
 
 const WatchPage = () => {
   return (
