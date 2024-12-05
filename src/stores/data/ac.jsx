@@ -110,6 +110,87 @@ export const acData = [{
 },
 {
     "id": "12",
+    "product": "Air Cooler",
+    "image": "/assests/Ac/4.jpg",
+    "company": "Honeywell",
+    "model": "FrostFlow XL",
+    "price": "299.50",
+    "category": "Electronics",
+    "description": "Portable evaporative cooler with large water tank for efficient cooling in dry climates."
+},
+{
+    "id": "13",
+    "product": "Air Cooler",
+    "image": "/assests/Ac/4.jpg",
+    "company": "Honeywell",
+    "model": "FrostFlow XL",
+    "price": "299.50",
+    "category": "Electronics",
+    "description": "Portable evaporative cooler with large water tank for efficient cooling in dry climates."
+},
+{
+    "id": "14",
+    "product": "Window AC",
+    "image": "/assests/Ac/5.jpg",
+    "company": "Whirlpool",
+    "model": "ChillGuard 800",
+    "price": "549.00",
+    "category": "Electronics",
+    "description": "Energy-efficient window-mounted air conditioner with remote control."
+},
+{
+    "id": "15",
+    "product": "Smart AC",
+    "image": "/assests/Ac/6.jpg",
+    "company": "Nest",
+    "model": "EcoCool Smart+",
+    "price": "899.99",
+    "category": "Electronics",
+    "description": "Wi-Fi connected smart AC that adapts to your cooling preferences and schedule."
+},
+{
+    "id": "16",
+    "product": "Inverter AC",
+    "image": "/assests/Ac/7.jpg",
+    "company": "Mitsubishi",
+    "model": "SilentComfort 1200i",
+    "price": "1499.00",
+    "category": "Electronics",
+    "description": "Inverter technology AC with precise temperature control and energy efficiency."
+},
+{
+    "id": "17",
+    "product": "Central AC",
+    "image": "/assests/Ac/12.jpg",
+    "company": "Trane",
+    "model": "ClimateCentral 5000",
+    "price": "2999.00",
+    "category": "Electronics",
+    "description": "Powerful central AC unit for large homes with zone-based temperature control."
+},
+{
+    "id": "18",
+    "product": "Air Conditioner",
+    "image": "/assests/Ac/1.jpg",
+    "company": "LG",
+    "model": "CoolTech 5000",
+    "price": "799.99",
+    "category": "Electronics",
+    "description": "Powerful 15000 BTU window air conditioner with energy-saving features."
+},
+,
+{
+    "id": "19",
+    "product": "Inverter AC",
+    "image": "/assests/Ac/7.jpg",
+    "company": "Mitsubishi",
+    "model": "SilentComfort 1200i",
+    "price": "1499.00",
+    "category": "Electronics",
+    "description": "Inverter technology AC with precise temperature control and energy efficiency."
+},
+{
+    "id": "20",
     "product": "Central AC",
     "image": "/assests/Ac/12.jpg",
     "company": "Trane",
