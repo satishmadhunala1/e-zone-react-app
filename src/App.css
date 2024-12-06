@@ -165,14 +165,14 @@ body {
 
 .pro-selected {
     width: 30%;
-    border: 1px solid black;
+    border: 2px solid rgb(254, 250, 250);
     margin-right: 20px;
 }
 
 .pro-selected {
     position: fixed;
-    width: 200px;
-    top: 100;
+    width: 300px;
+    top: 10;
     left: 0;
     height: 100vh;
     background-color: aliceblue;

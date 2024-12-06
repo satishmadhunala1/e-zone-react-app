@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
-
-
 const Navbar = () => {
   const { cartItems } = useCart();
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const menuItems = [
+    { name: "Mobiles", path: "/mobiles" },
+    { name: "Computers", path: "/computers" },
+    { name: "Watches", path: "/watch" },
+    { name: "Mens Wear", path: "/men" },
+    { name: "Woman Wear", path: "/woman" },
+    { name: "Furniture", path: "/furniture" },
+    { name: "Kitchen", path: "/kitchen" },
+    { name: "Fridge", path: "/fridge" },
+    { name: "Speakers", path: "/speaker" },
+    { name: "TV's", path: "/tv" },
+    { name: "AC", path: "/ac" },
+  ];
+
+  // Filter items based on the search query
+  const filteredItems = menuItems.filter((item) =>
+    item.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
 
   return (
     <div className="navbar-section">
@@ -17,7 +35,12 @@ const Navbar = () => {
         </Link>
 
         <div className="search">
-          <input type="text" placeholder="Search..." />
+          <input
+            type="text"
+            placeholder="Search..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)} // Update search query
+          />
         </div>
 
         <div className="user">
@@ -36,43 +59,15 @@ const Navbar = () => {
 
       <div className="subMenu">
         <ul>
-          <Link to="/mobiles" className="custom-link">
-            <li>Mobiles</li>
-          </Link>
-          <Link to="/computers" className="custom-link">
-            <li>Computers</li>
-          </Link>
-          <Link to="/watch" className="custom-link">
-            <li>Watches</li>
-          </Link>
-          <Link to="/men" className="custom-link">
-            <li>Mens Wear</li>
-          </Link>
-          <Link to="/woman" className="custom-link">
-            <li>Woman Wear</li>
-          </Link>
-          <Link to="/furniture" className="custom-link">
-            <li>Furniture</li>
-          </Link>
-          <Link to="/kitchen" className="custom-link">
-            <li>Kitchen</li>
-          </Link>
-          <Link to="/fridge" className="custom-link">
-            <li>Fridge</li>
-          </Link>
-          <Link to="/speaker" className="custom-link">
-            <li>Speakers</li>
-          </Link>
-          <Link to="/tv" className="custom-link">
-            <li>TV's</li>
-          </Link>
-          <Link to="/ac" className="custom-link">
-            <li>AC</li>
-          </Link>
+          {filteredItems.map((item) => (
+            <Link to={item.path} key={item.name} className="custom-link">
+              <li>{item.name}</li>
+            </Link>
+          ))}
         </ul>
       </div>
     </div>
   );
 };
 
-export default Navbar;  
+export default Navbar;
