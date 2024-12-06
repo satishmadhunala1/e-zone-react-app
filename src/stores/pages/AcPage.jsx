@@ -17,10 +17,6 @@ const AcPage = () => {
     );
   };
 
-  // Handle search input change
-  const handleSearchChange = (e) => {
-    setSearchQuery(e.target.value);
-  };
 
   // Filter products based on selected companies and search query
   const filteredProduct = acData.filter((item) => {
@@ -33,27 +29,12 @@ const AcPage = () => {
     return matchesCompany && matchesSearch;
   });
 
-  // Clear all filters
-  const clearFilters = () => {
-    setSelectedProduct([]);
-    setSearchQuery('');
-  };
 
   return (
     <>
       <Navbar />
       <div className="fullpage">
-        
-        {/* Search Input */}
-        <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Search by company or model..."
-            value={searchQuery}
-            onChange={handleSearchChange}
-          />
-          <button onClick={clearFilters}>Clear</button>
-        </div>
+       
 
         {/* Checkbox Filters */}
         <div className="pro-selected">

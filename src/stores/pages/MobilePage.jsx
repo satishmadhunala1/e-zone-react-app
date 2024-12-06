@@ -17,11 +17,6 @@ const MenPage = () => {
     }
   };
 
-  // Handler to clear all filters
-  const clearFilters = () => {
-    setSelectedBrands([]);
-    setSearchQuery('');
-  };
 
   // Filter products based on selected brands and search query
   const filteredProducts = menData.filter((item) => {
@@ -38,16 +33,6 @@ const MenPage = () => {
       <Navbar />
       <div className="fullpage">
         
-        {/* Search Input */}
-        <div className="search-bar">
-          <input
-            type="text"
-            placeholder="Search by model or brand..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <button onClick={clearFilters}>Clear</button>
-        </div>
 
         {/* Filters Section */}
         <div className="pro-selected scrollable-filters">
@@ -76,7 +61,7 @@ const MenPage = () => {
                   </div>
                 </Link>
                 <div className="proModel">
-                  {item.brand}, {item.model}
+                  {item.brand} {item.model}
                 </div>
               </div>
             ))
