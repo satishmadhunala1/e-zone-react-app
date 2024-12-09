@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import { computerData } from '../data/computers'; // No changes here
-import Navbar from '../components/Navbar'; // No changes here
-import { Link } from 'react-router-dom'; // No changes here
+import { computerData } from '../data/computers'; 
+import Navbar from '../components/Navbar'; 
+import { Link } from 'react-router-dom';
 
 import './pag.css';
 
 const CompPage = () => {
   const [selectedCompanies, setSelectedCompanies] = useState([]);
-
-  // Handler for selecting/deselecting companies
   const companyHandler = (company) => {
     if (selectedCompanies.includes(company)) {
       setSelectedCompanies(selectedCompanies.filter((item) => item !== company));

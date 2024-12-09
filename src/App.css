@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: rgb(217, 215, 207);
+    background-color: rgb(20, 19, 13);
 }
 
 .proSection {
@@ -283,6 +283,23 @@ ul li {
         font-size: small;
     }
 }
+
+.navbar-section {
+    z-index: 1000; /* Ensure the navbar stays on top */
+    position: sticky; /* Makes the navbar stick at the top during scroll */
+    top: 0; /* Ensures it's aligned at the top */
+}
+.navSection {
+    z-index: 1000; /* Ensure the navbar stays on top */
+    position: sticky; /* Makes the navbar stick at the top during scroll */
+    top: 0; /* Ensures it's aligned at the top */
+}
+
+.carousel-img {
+    z-index: -1; /* Sends the carousel images behind the navbar */
+    position: relative; /* Keeps the carousel in its normal flow */
+}
+
 
 .carousel-img {
     width: 100%;       /* Ensures the image takes the full width */

@@ -8,7 +8,7 @@ const AcPage = () => {
   const [selectedProduct, setSelectedProduct] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Handle checkbox selection
+  
   const companyHandler = (company) => {
     setSelectedProduct((prevSelected) =>
       prevSelected.includes(company)

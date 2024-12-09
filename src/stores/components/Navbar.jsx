@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 
 const Navbar = () => {
   const { cartItems } = useCart();
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
 
   const menuItems = [
     { name: "Mobiles", path: "/mobiles" },
@@ -25,12 +26,21 @@ const Navbar = () => {
     item.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const handleLogout = () => {
+    // Clear authentication-related data (localStorage/sessionStorage)
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+
+    // Redirect to login page
+    navigate("/Login");
+  };
+
   return (
     <div className="navbar-section">
       <div className="navSection">
         <Link to="/" className="custom-link">
           <div className="title">
-            <h2>E-Mart</h2>
+            <h2>E-Zone</h2>
           </div>
         </Link>
 
@@ -39,13 +49,14 @@ const Navbar = () => {
             type="text"
             placeholder="Search..."
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)} // Update search query
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
 
         <div className="user">
+          
           <Link to="/Login" className="custom-link">
-            <div className="user-detail">SignIn/SignUp</div>
+            <div className="user-detail">Login/SignUp</div>
           </Link>
         </div>
 
@@ -55,6 +66,11 @@ const Navbar = () => {
             <span>{cartItems.length}</span>
           </div>
         </Link>
+
+        {/* Logout Button */}
+        <button className="logout-btn" onClick={handleLogout}>
+          Logout
+        </button>
       </div>
 
       <div className="subMenu">
