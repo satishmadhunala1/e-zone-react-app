@@ -62,11 +62,11 @@ const Navbar = () => {
 
         <Link to="/cart" className="custom-link">
           <div className="cart">
+      
             Cart
             <span>{cartItems.length}</span>
           </div>
         </Link>
-
         {/* Logout Button */}
         <button className="logout-btn" onClick={handleLogout}>
           Logout

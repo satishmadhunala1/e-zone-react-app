@@ -4,8 +4,6 @@ import App from './App.jsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 import { CartProvider } from './stores/context/CartContext.jsx'
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 <BrowserRouter>
@@ -13,6 +11,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <CartProvider>
     <App />
     </CartProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 </BrowserRouter>
 )
