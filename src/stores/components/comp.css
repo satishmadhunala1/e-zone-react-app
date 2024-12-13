@@ -1,0 +1,137 @@
+.carousel-img {
+    width: 100%; /* Make the image responsive */
+    height: auto;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 576px) { /* Mobile view */
+    .carousel-img {
+      height: 200px; /* Adjust height for smaller screens */
+    }
+  }
+  
+  @media (min-width: 577px) and (max-width: 768px) { /* Tablet view */
+    .carousel-img {
+      height: 300px; /* Adjust height for tablets */
+    }
+  }
+  
+  @media (min-width: 769px) { /* Desktop/Laptop view */
+    .carousel-img {
+      height: 400px; /* Adjust height for larger screens */
+    }
+  }
+  
+   /* nav css */
+
+  /* General Styles */
+.navbar-section {
+  background-color: #000407;
+
+}
+
+.navSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title h2 {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+.search input {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.cart-user {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.custom-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart span {
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 3px 7px;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Submenu Styles */
+.subMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.subMenu.open ul {
+  display: block;
+}
+
+.subMenu li {
+  margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search,
+  .cart-user {
+    display: none; /* Hide search and cart-user for small screens */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger menu */
+  }
+
+  .subMenu {
+    display: none; /* Hide submenu initially */
+  }
+
+  .subMenu.open {
+    display: block; /* Show submenu when menu is open */
+  }
+}
+
+@media (max-width: 576px) {
+  .title h2 {
+    font-size: 20px;
+  }
+
+  .subMenu ul {
+    flex-direction: column; /* Stack menu items vertically */
+  }
+}

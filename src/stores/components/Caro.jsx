@@ -1,5 +1,6 @@
 import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
+import './comp.css';
 
 const Carosel = () => {
   return (
@@ -17,7 +18,6 @@ const Carosel = () => {
           src="/assests/Carosal/budsslide.jpg"
           alt="Second slide"
         />
-
       </Carousel.Item>
       <Carousel.Item>
         <img
@@ -25,7 +25,6 @@ const Carosel = () => {
           src="/assests/Carosal/furnitureslide.jpg"
           alt="Third slide"
         />
-
       </Carousel.Item>
     </Carousel>
   );

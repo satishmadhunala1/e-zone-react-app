@@ -32,7 +32,7 @@ const CreateAccount = () => {
       <div className="form-group">
         <input
           type="email"
-          placeholder="Email"
+          placeholder="type user"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -40,7 +40,7 @@ const CreateAccount = () => {
       <div className="form-group">
         <input
           type="password"
-          placeholder="Password"
+          placeholder="type user123"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
