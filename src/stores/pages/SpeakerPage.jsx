@@ -1,80 +1,68 @@
-import React, { useState } from "react";
-import { speakerData } from "../data/speaker";
-import Navbar from "../components/Navbar";
-import { Link } from "react-router-dom";
-import './pag.css';
+import React, { useState } from 'react'
+import { speakerData } from '../data/speaker'
+import Navbar from '../components/Navbar'
+import { Link } from 'react-router-dom'
 
 const SpeakerPage = () => {
-  const [selectedCompanies, setSelectedCompanies] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
 
-  // Handler to select/deselect a company
-  const companyHandler = (company) => {
-    setSelectedCompanies((prevSelected) =>
-      prevSelected.includes(company)
-        ? prevSelected.filter((item) => item !== company)
-        : [...prevSelected, company]
-    );
-  };
-  
+    const [selectedProduct, setSelectedProduct] = useState([])
 
-  // Filter speakers based on selected companies and search query
-  const filteredSpeakers = speakerData.filter((speaker) => {
-    const matchesCompany =
-      selectedCompanies.length === 0 || selectedCompanies.includes(speaker.company);
-    const matchesSearch =
-      !searchQuery ||
-      `${speaker.company} ${speaker.model}`.toLowerCase().includes(searchQuery.toLowerCase());
+    const companyHandler=(product)=>{
+            if(selectedProduct.includes(product)){
+                setSelectedProduct(selectedProduct.filter(item => item !== product))
+            }else{
+                setSelectedProduct([...selectedProduct, product]) 
+            }
+    }
 
-    return matchesCompany && matchesSearch;
-  });
 
-  return (
-    <>
-      <Navbar />
-      <div className="fullpage">
+    const filteredProduct = selectedProduct.length===0?
+      speakerData : speakerData.filter((orange)=>selectedProduct.includes(orange.company))
 
-        {/* Scrollable Filters Section */}
-        <div className="pro-selected ">
-          {Array.from(new Set(speakerData.map((item) => item.company))).map(
-            (company) => (
-              <div className="pro-input" key={company}>
-                <label>
-                  <input
-                    type="checkbox"
-                    checked={selectedCompanies.includes(company)}
-                    onChange={() => companyHandler(company)}
-                  />
-                  {company}
-                </label>
-              </div>
-            )
-          )}
+return (
+<>
+<Navbar />
+<div className="fullpage">
+    
+<div className="pro-selected">
+
+{speakerData.map((speaker)=>{
+    return(
+        <div className='pro-input'>
+            <label >
+                <input type="checkbox" 
+                checked = {selectedProduct.includes(speaker.company)}
+                onChange={()=>companyHandler(speaker.company)}
+                />
+                {speaker.company}
+            </label>
         </div>
+    )
+})}
 
-        {/* Display Filtered Speakers */}
-        <div className="pageSection">
-          {filteredSpeakers.length > 0 ? (
-            filteredSpeakers.map((speaker) => (
-              <div key={speaker.id}>
-                <Link to={`/speaker/${speaker.id}`}>
-                  <div className="pageImg">
-                    <img src={speaker.image} alt={`${speaker.company} ${speaker.model}`} />
-                  </div>
-                </Link>
-                <div className="proModel">
-                  {speaker.company} {speaker.model}
+</div>
+
+<div className='pageSection'>
+    {filteredProduct.map((item)=>{
+        return(
+            <div>
+
+            <Link to={`/speaker/${item.id}`}>
+                <div className="pageImg">
+                    <img src={item.image} alt="" />
                 </div>
-              </div>
-            ))
-          ) : (
-            <div className="no-results">No items match your search or filters.</div>
-          )}
-        </div>
+            </Link>
+                <div className="proModel">
+                    {item.company} {item.model}
+                </div>
+            </div>
+        )
+    })}
 
-      </div>
-    </>
-  );
-};
+ </div>
+</div>
+</>
+  )
+}
 
-export default SpeakerPage;
+export default SpeakerPage

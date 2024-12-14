@@ -121,7 +121,7 @@ export const mobileData = [{
 },
 {
 
-    "id": "1",
+    "id": "13",
     "product": "Mobile",
     "image": "/assests/NewMobile/11.jpg",
     "company": "Apple",
@@ -131,7 +131,7 @@ export const mobileData = [{
     "description": "The latest iPhone model with advanced camera capabilities and powerful performance."
 },
 {
-    "id": "2",
+    "id": "14",
     "product": "Mobile",
     "image": "/assests/NewMobile/2.jpg",
     "company": "Samsung",
@@ -141,7 +141,7 @@ export const mobileData = [{
     "description": "A foldable smartphone with a large display and multitasking features."
 },
 {
-    "id": "3",
+    "id": "15",
     "product": "Mobile",
     "image": "/assests/NewMobile/3.jpg",
     "company": "Google",
@@ -151,7 +151,7 @@ export const mobileData = [{
     "description": "A Google Pixel phone with exceptional camera quality and the latest Android features."
 },
 {
-    "id": "4",
+    "id": "16",
     "product": "Mobile",
     "image": "/assests/NewMobile/4.jpg",
     "company": "OnePlus",
@@ -161,7 +161,7 @@ export const mobileData = [{
     "description": "A flagship OnePlus phone known for its smooth performance and fast charging."
 },
 {
-    "id": "5",
+    "id": "17",
     "product": "Mobile",
     "image": "/assests/NewMobile/5.jpg",
     "company": "Xiaomi",
@@ -171,7 +171,7 @@ export const mobileData = [{
     "description": "A high-spec Xiaomi phone with a versatile camera system and powerful hardware."
 },
 {
-    "id": "6",
+    "id": "18",
     "product": "Mobile",
     "image": "/assests/NewMobile/6.jpg",
     "company": "Sony",
@@ -181,7 +181,7 @@ export const mobileData = [{
     "description": "A Sony Xperia phone with a 4K display and pro-level camera features."
 },
 {
-    "id": "7",
+    "id": "19",
     "product": "Mobile",
     "image": "/assests/NewMobile/7.jpg",
     "company": "LG",
@@ -191,7 +191,7 @@ export const mobileData = [{
     "description": "An LG smartphone with AI-enhanced features and a sleek design."
 },
 {
-    "id": "8",
+    "id": "20",
     "product": "Mobile",
     "image": "/assests/NewMobile/8.jpg",
     "company": "Motorola",
