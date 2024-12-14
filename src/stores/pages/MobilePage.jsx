@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { menData } from '../data/men';
+import { mobileData } from '../data/mobiles';
 import Navbar from '../components/Navbar';
 import { Link } from 'react-router-dom';
 import './pag.css';
 
-const MenPage = () => {
+const MobilePage = () => {
   const [selectedBrands, setSelectedBrands] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -19,7 +19,7 @@ const MenPage = () => {
 
 
   // Filter products based on selected brands and search query
-  const filteredProducts = menData.filter((item) => {
+  const filteredProducts = mobileData.filter((item) => {
     const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(item.brand);
     const matchesSearch =
       !searchQuery ||
@@ -36,7 +36,7 @@ const MenPage = () => {
 
         {/* Filters Section */}
         <div className="pro-selected scrollable-filters">
-          {Array.from(new Set(menData.map((item) => item.brand))).map((brand) => (
+          {Array.from(new Set(mobileData.map((item) => item.brand))).map((brand) => (
             <div className="pro-input" key={brand}>
               <label>
                 <input
@@ -55,7 +55,7 @@ const MenPage = () => {
           {filteredProducts.length > 0 ? (
             filteredProducts.map((item) => (
               <div key={item.id}>
-                <Link to={`/men/${item.id}`}>
+                <Link to={`/mobiles/${item.id}`}>
                   <div className="pageImg">
                     <img src={item.image} alt={`${item.brand} ${item.model}`} />
                   </div>
@@ -75,4 +75,4 @@ const MenPage = () => {
   );
 };
 
-export default MenPage;
+export default MobilePage;
