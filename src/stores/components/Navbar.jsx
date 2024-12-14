@@ -11,12 +11,12 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   const menuItems = [
-    { name: "Mobiles", path: "/mobiles" },
     { name: "Computers", path: "/computers" },
     { name: "Watches", path: "/watch" },
     { name: "Mens Wear", path: "/men" },
     { name: "Woman Wear", path: "/woman" },
     { name: "Furniture", path: "/furniture" },
+    { name: "Mobiles", path: "/mobiles" },
     { name: "Kitchen", path: "/kitchen" },
     { name: "Fridge", path: "/fridge" },
     { name: "Speakers", path: "/speaker" },

@@ -30,6 +30,10 @@
 
 }
 
+.user-detail{
+  color: #ee501c;
+}
+
 .navSection {
   display: flex;
   justify-content: space-between;
