@@ -3,6 +3,9 @@
 import React from 'react'
 // import { Routes, Route } from 'react-router-dom'
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+// import './styles.scss';
+
+
 import Login from "./stores/Login";
 import CreateAccount from "./stores/CreateAccount";
 
