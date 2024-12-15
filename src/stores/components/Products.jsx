@@ -9,6 +9,7 @@ import AC from "./AC";
 import Kitchen from "./Kitchen";
 import Speaker from "./Speaker";
 import TV from "./TV";
+import Footer from "./footer";
 
 
 
@@ -25,7 +26,7 @@ const Products = () => {
       <Speaker/>
       <Kitchen />
       <TV/>
-    
+      <Footer/>
 
       
     </div>
