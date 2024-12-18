@@ -63,7 +63,7 @@ const AcPage = () => {
                   </div>
                 </Link>
                 <div className="proModel">
-                  {item.company}, {item.model}
+                  {item.company} {item.model}
                 </div>
               </div>
             ))

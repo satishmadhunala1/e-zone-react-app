@@ -13,7 +13,6 @@ import CreateAccount from "./stores/CreateAccount";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-
 import './App.css'
 import LandingPage from './stores/pages/LandingPage'
 import Kitchen from './stores/components/Kitchen'
@@ -27,7 +26,6 @@ import AcPage from './stores/pages/AcPage'
 import KitchenPage from './stores/pages/KitchenPage'
 import SpeakerPage from './stores/pages/SpeakerPage';
 import TvPage from './stores/pages/TvPage';
-
 
 
 import MobileSingle from './stores/singles/MobileSingle'
