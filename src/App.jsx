@@ -1,94 +1,85 @@
-
-
-import React from 'react'
-// import { Routes, Route } from 'react-router-dom'
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-// import './styles.scss';
-
-
-import Login from "./stores/Login";
-import CreateAccount from "./stores/CreateAccount";
-
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import { Routes, Route } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { StoreProvider } from './stores/context/StoreContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
+// Pages
+import LandingPage from './stores/pages/LandingPage';
+import CategoryPage from './stores/pages/CategoryPage';
+import SingleProductPage from './stores/pages/SingleProductPage';
+import CartPage from './stores/pages/CartPage';
+import WishlistPage from './stores/pages/WishlistPage';
+import AccountPage from './stores/pages/AccountPage';
+import NotFoundPage from './stores/pages/NotFoundPage';
 
-import './App.css'
-import LandingPage from './stores/pages/LandingPage'
-import Kitchen from './stores/components/Kitchen'
-import MobilePage from './stores/pages/MobilePage'
-import CompPage from './stores/pages/CompPage'
-import WatchPage from './stores/pages/WatchPage'
-import MenPage from './stores/pages/MenPage'
-import WomanPage from './stores/pages/WomanPage'
-import FurniturePage from './stores/pages/FurniturePage'
-import AcPage from './stores/pages/AcPage'
-import KitchenPage from './stores/pages/KitchenPage'
-import SpeakerPage from './stores/pages/SpeakerPage';
-import TvPage from './stores/pages/TvPage';
+// Components
+import Navbar from './stores/components/Navbar';
+import Footer from './stores/components/Footer';
 
-
-import MobileSingle from './stores/singles/MobileSingle'
-import UserCart from './stores/UserCart'
-import FridgePage from './stores/pages/FridgePage'
-import ComputerSingle from './stores/singles/ComputerSingle'
-import FurnitureSingle from './stores/singles/FurnitureSingle'
-import KitchenSingle from './stores/singles/KitchenSingle'
-import AcSingle from './stores/singles/AcSingle'
-import MenSingle from './stores/singles/MenSingle'
-import WatchSingle from './stores/singles/WatchSingle'
-import WomanSingle from './stores/singles/WomanSingle'
-import FridgeSingle from './stores/singles/FridgeSingle'
-import SpeakerSingle from './stores/singles/SpeakerSingle';
-import TvSingle from './stores/singles/TvSingle';
-
-
-
+// Auth
+import Login from './stores/Login';
+import CreateAccount from './stores/CreateAccount';
 
 const App = () => {
   return (
-    <div>
-      <Routes>
-        <Route path='/' element = { <LandingPage />}/>
-        <Route path= '/kitchen' element = {<KitchenPage />} />
-        <Route path='/mobiles' element= {<MobilePage />} />
-        <Route path='/computers' element= {<CompPage />} />
-        <Route path='/watch' element= {<WatchPage />} />
-        <Route path='/fridge' element={<FridgePage />} />
-        <Route path='/men' element= {<MenPage />} /> 
-        <Route path='/woman' element= {<WomanPage />} />             
-        <Route path='/furniture' element= {<FurniturePage />} />             
-        <Route path='/ac' element= {<AcPage />} />             
-        <Route path='/speaker' element= {<SpeakerPage />} />     
-        <Route path='/tv' element= {<TvPage />} />    
+    <StoreProvider>
+      <div className="min-h-screen flex flex-col bg-gray-50">
+        <Navbar />
+        <main className="flex-grow">
+          <AnimatePresence mode="wait">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Routes>
+                <Route path="/" element={<LandingPage />} />
+                
+                {/* Specific Category Routes - these will take precedence over the generic route */}
+                <Route path="/mobiles" element={<CategoryPage category="mobiles" />} />
+                <Route path="/computers" element={<CategoryPage category="computers" />} />
+                <Route path="/tv" element={<CategoryPage category="tv" />} />
+                <Route path="/audio" element={<CategoryPage category="audio" />} />
+                <Route path="/fashion" element={<CategoryPage category="fashion" />} />
+                <Route path="/home" element={<CategoryPage category="home" />} />
+                <Route path="/watches" element={<CategoryPage category="watches" />} />
+                <Route path="/books" element={<CategoryPage category="books" />} />
+                
+                {/* Generic Category Route - handles all other categories */}
+                <Route path="/:category" element={<CategoryPage />} />
+                
+                {/* Gaming Routes */}
+                <Route path="/gaming/consoles" element={<CategoryPage category="gaming-consoles" />} />
+                <Route path="/gaming/accessories" element={<CategoryPage category="gaming-accessories" />} />
+                <Route path="/gaming/pcs" element={<CategoryPage category="gaming-pcs" />} />
+                
+                {/* Audio Routes */}
+                <Route path="/audio/headphones" element={<CategoryPage category="headphones" />} />
+                <Route path="/audio/speakers" element={<CategoryPage category="speakers" />} />
+                <Route path="/audio/earphones" element={<CategoryPage category="earphones" />} />
+                
+                {/* Single Product Routes */}
+                <Route path="/product/:category/:id" element={<SingleProductPage />} />
+                
+                {/* User Routes */}
+                <Route path="/cart" element={<CartPage />} />
+                <Route path="/wishlist" element={<WishlistPage />} />
+                <Route path="/account" element={<AccountPage />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/create-account" element={<CreateAccount />} />
+                
+                {/* 404 Route */}
+                <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+            </motion.div>
+          </AnimatePresence>
+        </main>
+        <Footer />
+      </div>
+    </StoreProvider>
+  );
+};
 
-
-        
-
-
-
-        <Route path='/mobiles/:id' element = {<MobileSingle />} />
-      <Route path='/cart' element = {<UserCart />} />
-      <Route path='/ac/:id' element = {<AcSingle />} />
-      <Route path='/computers/:id' element = {<ComputerSingle />} />
-      <Route path='/furniture/:id' element = {<FurnitureSingle />} />
-      <Route path='/kitchen/:id' element = {<KitchenSingle />} />
-      <Route path='/men/:id' element = {<MenSingle />} />
-      <Route path='/watch/:id' element = {<WatchSingle />} />
-      <Route path='/woman/:id' element = {<WomanSingle />} />
-      <Route path='/fridge/:id' element = {<FridgeSingle />} />
-      <Route path='/speaker/:id' element = {<SpeakerSingle />} />
-      <Route path='/tv/:id' element = {<TvSingle />} />
-
-
-      <Route path="/create-account" element={<CreateAccount />} />
-      <Route path="/Login" element={<Login />} />
-
-
-
-      </Routes>
-    </div>
-  )
-}
-
-export default App
+export default App;
