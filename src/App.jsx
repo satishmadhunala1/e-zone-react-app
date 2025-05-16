@@ -15,7 +15,7 @@ import NotFoundPage from './stores/pages/NotFoundPage';
 
 // Components
 import Navbar from './stores/components/Navbar';
-import Footer from './stores/components/Footer';
+import Footer from './stores/components/footer';
 
 // Auth
 import Login from './stores/Login';
