@@ -12,40 +12,60 @@ import { useStore } from '../context/StoreContext';
 import { HeartIcon as HeartIconSolid } from '@heroicons/react/24/solid';
 import { StarIcon } from '@heroicons/react/24/outline';
 import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
+import { getPlaceholderImage } from '../../utils/placeholder-images';
 
 const ProductCard = ({ product }) => {
   const { addToCart, addToWishlist, removeFromWishlist, isInWishlist } = useStore();
   const isWishlisted = isInWishlist(product.id);
   const [showDetails, setShowDetails] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
   
   // Create product URL, handling potential missing category
   const productUrl = product.category 
     ? `/product/${product.category}/${product.id}`
     : `/product/${product.id}`;
 
+  // Get placeholder image based on category
+  const imageUrl = product.image.startsWith('http') 
+    ? product.image 
+    : getPlaceholderImage(product.image.split('/').pop().split('/')[0], product.id);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
+  const handleImageError = (e) => {
+    // If image fails to load, replace with a fallback
+    e.target.src = `https://picsum.photos/seed/fallback-${product.id}/400/400`;
+  };
+
   return (
     <motion.div
-      className="card group"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3 }}
+      className="bg-white rounded-lg shadow-sm hover:shadow-md custom-transition overflow-hidden"
     >
-      <div className="relative overflow-hidden">
+      <div className="relative">
         <Link to={productUrl}>
+          {!imageLoaded && (
+            <div className="absolute inset-0 bg-gray-100 animate-pulse" />
+          )}
           <img
-            src={product.image}
+            src={imageUrl}
             alt={product.name}
-            className="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300"
+            className={`w-full h-48 object-cover ${imageLoaded ? 'loaded' : 'loading'}`}
+            onLoad={handleImageLoad}
+            onError={handleImageError}
           />
         </Link>
         
         {/* Action Icons Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3">
+        <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 custom-transition flex items-center justify-center gap-3">
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => addToCart(product)}
-            className="p-3 bg-white rounded-full shadow-md text-gray-700 hover:text-primary-600 transition-colors"
+            className="p-3 bg-white rounded-full shadow-md text-gray-700 hover:text-primary-600 custom-transition"
             title="Add to Cart"
           >
             <ShoppingCartIcon className="h-6 w-6" />
@@ -55,7 +75,7 @@ const ProductCard = ({ product }) => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => isWishlisted ? removeFromWishlist(product.id) : addToWishlist(product)}
-            className="p-3 bg-white rounded-full shadow-md text-gray-700 transition-colors"
+            className="p-3 bg-white rounded-full shadow-md text-gray-700 custom-transition"
             title={isWishlisted ? "Remove from Wishlist" : "Add to Wishlist"}
           >
             {isWishlisted ? (
@@ -71,7 +91,7 @@ const ProductCard = ({ product }) => {
           >
             <Link 
               to={productUrl}
-              className="p-3 bg-white rounded-full shadow-md text-gray-700 hover:text-primary-600 transition-colors inline-block"
+              className="p-3 bg-white rounded-full shadow-md text-gray-700 hover:text-primary-600 custom-transition inline-block"
               title="View Details"
             >
               <EyeIcon className="h-6 w-6" />

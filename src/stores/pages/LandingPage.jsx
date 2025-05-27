@@ -12,26 +12,26 @@ import {
 import { categories, getAllProducts } from '../data/products';
 import ProductCard from '../components/ProductCard';
 import SearchBar from '../components/SearchBar';
-import '../components/comp.css';
+import { getPlaceholderImage, getCarouselImage } from '../../utils/placeholder-images';
 
 const slides = [
   {
     id: 1,
-    image: '/assests/Carosal/1.jpg',
+    image: getCarouselImage(1),
     title: 'Latest Electronics',
     description: 'Discover the newest innovations in technology',
     link: '/mobiles'
   },
   {
     id: 2,
-    image: '/assests/Carosal/2.jpg',
+    image: getCarouselImage(2),
     title: 'Premium Devices',
     description: 'Powerful performance for work and play',
     link: '/computers'
   },
   {
     id: 3,
-    image: '/assests/Carosal/3.jpg',
+    image: getCarouselImage(3),
     title: 'Audio Experience',
     description: 'Immerse yourself in premium sound',
     link: '/audio'
@@ -257,7 +257,7 @@ const LandingPage = () => {
                 >
                   <div className="relative rounded-2xl overflow-hidden aspect-square bg-gray-100">
                     <img
-                      src={`${category.image}/1.jpg`}
+                      src={getPlaceholderImage(category.image.split('/').pop(), 1)}
                       alt={category.name}
                       className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
                     />

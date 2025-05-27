@@ -2,52 +2,52 @@ export const categories = [
   {
     id: 'mobiles',
     name: 'Mobiles',
-    image: '/assests/Mobiles',
+    image: '/assets/NewMobile',
     subcategories: ['NewMobile']
   },
   {
     id: 'computers',
     name: 'Computers & Laptops',
-    image: '/assests/Computers'
+    image: '/assets/Computers'
   },
   {
     id: 'tv',
     name: 'TVs & Entertainment',
-    image: '/assests/TV'
+    image: '/assets/TV'
   },
   {
     id: 'audio',
     name: 'Audio',
-    image: '/assests/speakers',
+    image: '/assets/speakers',
     subcategories: ['headphones', 'speakers', 'earphones']
   },
   {
     id: 'fashion',
     name: 'Fashion',
-    image: '/assests/MenWear',
+    image: '/assets/MenWear',
     subcategories: ['MenWear', 'Woman']
   },
   {
     id: 'home',
     name: 'Home & Kitchen',
-    image: '/assests/Kitchen',
-    subcategories: ['Kitchen', 'Furniture', 'Ac', 'fridge']
+    image: '/assets/Kitchen',
+    subcategories: ['Kitchen', 'Furniture']
   },
   {
     id: 'watches',
     name: 'Watches',
-    image: '/assests/Watch'
+    image: '/assets/Watch'
   },
   {
     id: 'books',
     name: 'Books',
-    image: '/assests/Books'
+    image: '/assets/Books'
   }
 ];
 
 // Helper function to generate product data from assets
 const generateProducts = (category, subcategory = null) => {
-  const basePath = `/assests/${subcategory || category}`;
+  const basePath = `/assets/${subcategory || category}`;
   const products = [];
   
   // Generate multiple products per category (up to 12)

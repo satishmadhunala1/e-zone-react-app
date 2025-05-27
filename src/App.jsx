@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { StoreProvider } from './stores/context/StoreContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 
 // Pages
 import LandingPage from './stores/pages/LandingPage';

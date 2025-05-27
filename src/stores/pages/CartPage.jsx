@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useStore } from '../context/StoreContext';
 import { TrashIcon } from '@heroicons/react/24/outline';
+import { useState } from 'react';
 
 const CartPage = () => {
   const {
@@ -10,6 +11,24 @@ const CartPage = () => {
     updateCartItemQuantity,
     getCartTotal
   } = useStore();
+  const navigate = useNavigate();
+  const [isProcessing, setIsProcessing] = useState(false);
+
+  const handleCheckout = () => {
+    setIsProcessing(true);
+    
+    // Simulate checkout process
+    setTimeout(() => {
+      // Clear the cart by removing all items
+      cart.forEach(item => removeFromCart(item.id));
+      
+      // Show success message using alert
+      alert('Order placed successfully! Thank you for your purchase.');
+      
+      // Navigate to home page
+      navigate('/');
+    }, 1500);
+  };
 
   if (cart.length === 0) {
     return (
@@ -122,9 +141,22 @@ const CartPage = () => {
             </div>
 
             <button
-              className="mt-6 w-full bg-primary-600 text-white px-6 py-3 rounded-md font-medium hover:bg-primary-700 transition-colors"
+              onClick={handleCheckout}
+              disabled={isProcessing}
+              className={`mt-6 w-full px-6 py-3 rounded-md font-medium text-white transition-colors ${
+                isProcessing 
+                  ? 'bg-gray-400 cursor-not-allowed' 
+                  : 'bg-primary-600 hover:bg-primary-700'
+              }`}
             >
-              Proceed to Checkout
+              {isProcessing ? (
+                <div className="flex items-center justify-center">
+                  <div className="animate-spin rounded-full h-5 w-5 border-2 border-white border-t-transparent mr-2"></div>
+                  Processing...
+                </div>
+              ) : (
+                'Proceed to Checkout'
+              )}
             </button>
 
             <div className="mt-6 text-center">
