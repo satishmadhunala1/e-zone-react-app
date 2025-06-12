@@ -39,25 +39,25 @@ const Navbar = () => {
       name: 'Electronics',
       items: [
         { name: 'Smartphones', path: '/mobiles' },
-        { name: 'Laptops', path: '/laptops' },
-        { name: 'Tablets', path: '/tablets' },
-        { name: 'Accessories', path: '/accessories' }
+        { name: 'Laptops', path: '/computers' },
+        { name: 'Tablets', path: '/tv' },
+        { name: 'Accessories', path: '/fashion' }
       ]
     },
     {
-      name: 'Gaming',
+      name: 'Fashion',
       items: [
-        { name: 'Gaming Consoles', path: '/gaming/consoles' },
-        { name: 'Gaming Accessories', path: '/gaming/accessories' },
-        { name: 'Gaming PCs', path: '/gaming/pcs' }
+        { name: 'Clothing', path: '/fashion' },
+        { name: 'Footwear', path: '/fashion' },
+        { name: 'Accessories', path: '/fashion' }
       ]
     },
     {
       name: 'Audio',
       items: [
-        { name: 'Headphones', path: '/audio/headphones' },
-        { name: 'Speakers', path: '/audio/speakers' },
-        { name: 'Earphones', path: '/audio/earphones' }
+        { name: 'Headphones', path: '/audio' },
+        { name: 'Speakers', path: '/audio' },
+        { name: 'Earphones', path: '/audio' }
       ]
     }
   ];
